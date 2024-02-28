@@ -1,0 +1,38 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+
+admin-proposals-view {
+    .page {
+        width: 21cm;
+        min-height: 29.7cm;
+    }
+
+    ul.pdf-list {
+        li {
+            list-style-type: none;
+            &:before {
+                content: '• ';
+                margin-left: -1em;
+            }
+        }
+    }
+
+    ol.pdf-list {
+        li {
+            list-style-type: none;
+
+            &:before {
+                content: '- ';
+                margin-left: -1em;
+            }
+        }
+    }
+}
+
+shared-forms-proposals-customise {
+    .mat-mdc-form-field {
+        min-width: unset;
+    }
+}

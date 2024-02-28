@@ -1,0 +1,2 @@
+#schema: "https://crm-api.ewbsbusiness.ae/graphql"
+schema: "http://localhost:3000/graphql"

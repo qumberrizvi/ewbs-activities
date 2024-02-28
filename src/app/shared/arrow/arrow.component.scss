@@ -1,0 +1,50 @@
+.arrow {
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    overflow: hidden;
+    top: -290px;
+    left: 50px;
+
+    //noinspection CssOverwrittenProperties
+    .curve {
+        border: 2px solid red;
+        border-color: transparent transparent transparent red;
+        height: 360px;
+        width: 1200px;
+        border-radius: 230px 0 0 150px;
+    }
+
+    .point {
+        position: absolute;
+        left: 70px;
+        top: 65px;
+
+        &:before, &:after {
+            border: 1px solid red;
+            height: 25px;
+            content: "";
+            position: absolute;
+        }
+
+        //noinspection CssUnknownProperty
+        &:before {
+            top: -18px;
+            left: -11px;
+            transform:rotate(65deg);
+            -webkit-transform:rotate(65deg);
+            -moz-transform:rotate(65deg);
+            -ms-transform: rotate(65deg);
+        }
+
+        //noinspection CssUnknownProperty
+        &:after {
+            top: -10px;
+            left: 0;
+            transform:rotate(5deg);
+            -webkit-transform: rotate(5deg);
+            -moz-transform:rotate(5deg);
+            -ms-transform: rotate(5deg);
+        }
+    }
+}
