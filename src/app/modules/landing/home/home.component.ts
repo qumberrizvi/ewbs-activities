@@ -8,13 +8,14 @@ import {Zone} from 'app/core/graphql/generated/graphql';
 import {ZoneService} from "../../services/zone.service";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {ArrowComponent} from "../../../shared/arrow/arrow.component";
+import {ActivitiesTableComponent} from "../../../shared/activities-table/activities-table.component";
 
 @Component({
     selector: 'landing-home',
     templateUrl: './home.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [MatButtonModule, RouterLink, MatIconModule, NgOptimizedImage, CommonModule, MatTooltipModule, ArrowComponent],
+    imports: [MatButtonModule, RouterLink, MatIconModule, NgOptimizedImage, CommonModule, MatTooltipModule, ArrowComponent, ActivitiesTableComponent],
 })
 export class LandingHomeComponent implements OnInit, OnDestroy {
     private _unsubscribeAll: Subject<any> = new Subject<any>();

@@ -1,22 +1,16 @@
 import {Injectable} from "@angular/core";
 import {BehaviorSubject, Observable, tap} from "rxjs";
-import {Zone, ZoneGQL, ZonesGQL} from "../../core/graphql/generated/graphql";
+import {Zone, ZonesGQL} from "../../core/graphql/generated/graphql";
 
 @Injectable({providedIn: 'root'})
 export class ZoneService {
     private _savedZoneKey = 'selectedZone';
-    private _zone: BehaviorSubject<Zone | null> = new BehaviorSubject<Zone | null>(null);
     private _zones: BehaviorSubject<Zone[] | null> = new BehaviorSubject<Zone[] | null>(null);
     private _selectedZone: BehaviorSubject<Zone | null> = new BehaviorSubject<Zone | null>(null);
 
     constructor(
         private zonesGql: ZonesGQL,
-        private zoneGql: ZoneGQL,
     ) {
-    }
-
-    get zone$(): Observable<Zone> {
-        return this._zone.asObservable();
     }
 
     get zones$(): Observable<Zone[]> {
@@ -29,10 +23,6 @@ export class ZoneService {
         }
 
         return this._selectedZone.asObservable();
-    }
-
-    set zone$(zone: Zone) {
-        this._zone.next(zone);
     }
 
     set selectedZone$(zone: Zone) {
@@ -60,13 +50,5 @@ export class ZoneService {
                 return this._zones.next(zones);
             }),
         );
-    }
-
-    getZone(slug: string): Observable<{ readonly data?: { zone: Zone } }> {
-        return this.zoneGql.watch({slug}).valueChanges.pipe(
-            tap(({data: {zone}}) => {
-                return this._zone.next(zone);
-            })
-        )
     }
 }
