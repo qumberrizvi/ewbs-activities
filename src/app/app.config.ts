@@ -11,6 +11,7 @@ import { appRoutes } from 'app/app.routes';
 import { provideIcons } from 'app/core/icons/icons.provider';
 import { TranslocoHttpLoader } from './core/transloco/transloco.http-loader';
 import { inject as injectVercel } from "@vercel/analytics";
+import { injectSpeedInsights } from '@vercel/speed-insights'
 import { graphqlProvider } from './graphql.provider';
 
 
@@ -73,6 +74,7 @@ export const appConfig: ApplicationConfig = {
                 const defaultLang = translocoService.getDefaultLang();
                 translocoService.setActiveLang(defaultLang);
                 injectVercel();
+                injectSpeedInsights();
                 return () => firstValueFrom(translocoService.load(defaultLang));
             },
             multi     : true,
