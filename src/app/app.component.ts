@@ -1,19 +1,27 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {GoogleAnalyticsService} from "./services/google-analytics.service";
+import {environment} from "../environments/environment";
 
 @Component({
-    selector   : 'app-root',
+    selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls  : ['./app.component.scss'],
-    standalone : true,
-    imports    : [RouterOutlet],
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [RouterOutlet],
 })
-export class AppComponent
-{
+export class AppComponent implements OnInit {
     /**
      * Constructor
      */
-    constructor()
-    {
+    constructor(
+        private readonly googleAnalyticsService: GoogleAnalyticsService,
+    ) {
+    }
+
+    ngOnInit(): void {
+        if (environment.production) {
+            this.googleAnalyticsService.initialize();
+        }
     }
 }

@@ -5,7 +5,7 @@ import {RouterLink} from '@angular/router';
 import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {Observable, Subject, takeUntil} from "rxjs";
 import {Zone} from 'app/core/graphql/generated/graphql';
-import {ZoneService} from "../../services/zone.service";
+import {ZoneService} from "../../../services/zone.service";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {ArrowComponent} from "../../../shared/arrow/arrow.component";
 import {ActivitiesTableComponent} from "../../../shared/activities-table/activities-table.component";

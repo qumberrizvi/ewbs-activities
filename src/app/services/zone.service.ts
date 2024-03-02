@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {BehaviorSubject, Observable, tap} from "rxjs";
-import {Zone, ZonesGQL} from "../../core/graphql/generated/graphql";
+import {Zone, ZonesGQL} from "../core/graphql/generated/graphql";
 
 @Injectable({providedIn: 'root'})
 export class ZoneService {

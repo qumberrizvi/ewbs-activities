@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {BehaviorSubject, Observable, tap} from "rxjs";
-import {Activity, SearchActivitiesGQL,} from "../../core/graphql/generated/graphql";
+import {Activity, SearchActivitiesGQL,} from "../core/graphql/generated/graphql";
 
 @Injectable({providedIn: 'root'})
 export class ActivityService {

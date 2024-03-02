@@ -9,8 +9,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ZoneService} from "../../modules/services/zone.service";
-import {ActivityService} from "../../modules/services/activity.service";
+import {ZoneService} from "../../services/zone.service";
+import {ActivityService} from "../../services/activity.service";
 import {FuseConfirmationService} from "../../../@fuse/services/confirmation";
 
 @Component({
